@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SidenavService} from '../sidenav/sidenav.service';
 
 @Component({
@@ -7,6 +7,8 @@ import {SidenavService} from '../sidenav/sidenav.service';
   styleUrls: ['./topnav.component.scss']
 })
 export class TopnavComponent implements OnInit {
+
+
 
   constructor(public sidenavService: SidenavService) { }
 

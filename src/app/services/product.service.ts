@@ -9,7 +9,23 @@ import {Product} from '../models/product.model';
 })
 export class ProductService {
 
-  constructor() {
+  constructor(private angularService: AngularFirestore) {
+  }
+
+  public getProducts(): Observable<any> {
+    return this.angularService.collection('products').snapshotChanges();
+  }
+
+  public createProducts(data: Product) {
+    return this.angularService.collection('products').add(Object.assign({}, data));
+  }
+
+  public updateProduct(id: string, data: Product) {
+    return this.angularService.collection('products').doc(id).set(Object.assign({}, data));
+  }
+
+  public deleteProduct(productId: string) {
+    return this.angularService.collection('products').doc(productId).delete();
   }
 }
 

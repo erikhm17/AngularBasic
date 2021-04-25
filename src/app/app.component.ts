@@ -9,7 +9,6 @@ export class AppComponent implements OnInit{
   title = 'Hola mundo';
 
   constructor() {
-
   }
 
   ngOnInit(): void {
