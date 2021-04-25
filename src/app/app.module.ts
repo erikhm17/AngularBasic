@@ -1,34 +1,28 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {LoginComponent} from './login/login.component';
-import { TopnavComponent } from './topnav/topnav.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { HomeComponent } from './home/home.component';
-import { ProductsComponent } from './products/products.component';
-import { ProfileComponent } from './profile/profile.component';
+import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialModule} from './material.module';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DashboardComponent,
-    LoginComponent,
-    TopnavComponent,
-    SidebarComponent,
-    HomeComponent,
-    ProductsComponent,
-    ProfileComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
